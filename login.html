@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Login Demo</title>
+</head>
+<body>
+
+    <h1>TikTok Login Demo</h1>
+    <p>Click the button below to login using TikTok:</p>
+
+    <button onclick="loginWithTikTok()">Login with TikTok</button>
+
+    <script>
+        function loginWithTikTok() {
+            const clientKey = "awhuchfs2who2mpf"; // 👈 اكتبي ال Client Key هنا
+            const redirectUri = encodeURIComponent("https://samah-mahmoud.github.io/callback.html");
+
+            // رابط تسجيل الدخول الرسمي لـ TikTok Login Kit
+            const authUrl = `https://www.tiktok.com/auth/authorize/`;
+            
+            // بناء رابط تسجيل الدخول
+            const fullUrl = `${authUrl}?client_key=${clientKey}&redirect_uri=${redirectUri}&response_type=code&scope=user.info.basic`;
+
+            // تحويل المستخدم لصفحة تسجيل الدخول
+            window.location.href = fullUrl;
+        }
+    </script>
+</body>
+</html>
